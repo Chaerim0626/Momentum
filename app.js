@@ -3,6 +3,8 @@
 //querySelector는 element를 css방식으로 검색
 
 
-const title = document.querySelectorAll(".hello h1");
+const title = document.querySelector(".hello:first-child h1");
+console.dir(title);
+title.innerText = "helloooo";
 
-console.log(title);
+title.style.color = "blue"; //js에서 style 변경하기
