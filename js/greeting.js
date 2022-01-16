@@ -17,13 +17,13 @@ function onLoginSubmit(event) {
     //브라우저 기본동작 막기
     event.preventDefault(); 
     
-    //form에 hidden이라는 class 추가
-    //form, h1 모두 hidden이라는 class 갖게됨
+    //form에 hidden이라는 class 추가, form 숨기기
     loginForm.classList.add(HIDDEN_CLASSNAME); 
 
     //입력한 값을 username 변수에 넣기
     const username = loginInput.value; 
     
+    //입력한 값을 local storage에 존재하게 설정
     localStorage.setItem(USERNAME_KEY, username);
 
     /*비어있는 h1인 greeting에 text넣기
@@ -36,7 +36,10 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
+
+    //text 추가
     greeting.innerText = `Hello ${username}`; 
+    //class명 제거
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -44,7 +47,7 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) { //user정보 없으면
 
-    //form의 hidden class 지우기
+    //form의 hidden class 지우기, 화면에 폼 표시
     loginForm.classList.remove(HIDDEN_CLASSNAME); 
     loginForm.addEventListener("submit", onLoginSubmit);
 }
