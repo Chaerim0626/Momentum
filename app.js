@@ -5,22 +5,49 @@
 
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const greeeting = document.querySelector("#greeting");
+const greeting = document.querySelector("#greeting");
 
 const HIDDEN_CLASSNAME = "hidden"; //string포함된 변수는 대문자로 표기
-
+const USERNAME_KEY = "username";
 
 
 function onLoginSubmit(event) {
     //console.log(loginInput.value); input 내용 가져오기
     
-    event.preventDefault(); //브라우저 기본동작 막기
+    //브라우저 기본동작 막기
+    event.preventDefault(); 
     
+    //form에 hidden이라는 class 추가
+    //form, h1 모두 hidden이라는 class 갖게됨
     loginForm.classList.add(HIDDEN_CLASSNAME); 
-    const username = loginInput.value; //입력한 값을 username 변수에 넣기
+
+    //입력한 값을 username 변수에 넣기
+    const username = loginInput.value; 
     
-    greeeting.innerText = `Hello ${username}`; //greeting id에 text추가
-    greeeting.classList.remove(HIDDEN_CLASSNAME);
+    localStorage.setItem(USERNAME_KEY, username);
+
+    /*비어있는 h1인 greeting에 text넣기
+    greeting.innerText = `Hello ${username}`; 
+
+    h1에서 hidden이라는 클래스 삭제
+    greeting.classList.remove(HIDDEN_CLASSNAME); */
+
+    paintGreetings(username);
 }
 
-loginForm.addEventListener("submit", onLoginSubmit);
+function paintGreetings(username) {
+    greeting.innerText = `Hello ${username}`; 
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) { //user정보 없으면
+
+    //form의 hidden class 지우기
+    loginForm.classList.remove(HIDDEN_CLASSNAME); 
+    loginForm.addEventListener("submit", onLoginSubmit);
+}
+else {
+    paintGreetings(savedUsername);
+}
