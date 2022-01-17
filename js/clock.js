@@ -13,5 +13,5 @@ function getClock() {
 
 }
    
-getClock();
-setInterval(getClock, 1000);
+
+setInterval(getClock, 1000); //매초마다 시계 실행
