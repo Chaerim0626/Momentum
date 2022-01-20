@@ -8,7 +8,7 @@ const quotes = [
         author : "Nietzsche"
     },
     {
-        quotes: "The higher a man gets, the smaller he seems to those who cannot fly",
+        quotes: "The higher a man gets, the smaller he seems to those who cannot fly.",
         author: "Nietzsche"
     },
     {
@@ -16,7 +16,7 @@ const quotes = [
         author: "Spinoza"
     },
     {
-        quotes: "Fear cannot be without hope nor hope without fear",
+        quotes: "Fear cannot be without hope nor hope without fear.",
         author: "Spinoza"
     },
     {
@@ -24,7 +24,7 @@ const quotes = [
         author: "Spinoza"
     },
     {
-        quotes: "The endeavor to understand is the first and only basis of virtue",
+        quotes: "The endeavor to understand is the first and only basis of virtue.",
         author : "Spinoza"
     },
     {
@@ -46,5 +46,5 @@ const author = document.querySelector("#quote span:last-child");
 
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todaysQuote.quotes;
+quote.innerText = todaysQuote.quotes + "\n";
 author.innerText = todaysQuote.author;

@@ -18,8 +18,8 @@ function onGeoOK(position) {
        
        info[1].innerText = data.weather[0].main;
        info[0].innerText = data.name;
-       info[2].innerText = data.main.temp;
-       info[3].innerText = data.main.feels_like;
+       info[2].innerText = data.main.temp + "°";
+       //info[3].innerText = data.main.feels_like;
 
     });
 
