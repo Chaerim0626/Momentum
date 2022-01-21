@@ -14,7 +14,7 @@ img {
 }
 #login-form {
     position: absolute;
-    top : 52%;
+    top : 55%;
     left: 50%;
     transform: translate( -50%, -50%);
 }
@@ -109,7 +109,7 @@ img {
     top : 5%;
     left: 75%;
     font-family: 'Jua', sans-serif;
-    font-size : 1.5rem;
+    font-size : 1rem;
     background-color:transparent;
     border-top : none;
     border-left : none;
@@ -124,7 +124,7 @@ img {
 }
 #todo-form input::placeholder{
     color : rgb(223, 217, 217);
-    font-size : 1.5rem;
+    font-size : 1rem;
 }
 
 #todo-list {
@@ -133,7 +133,7 @@ img {
     left: 75%;
     color : white;
     font-family: 'Jua', sans-serif;
-    font-size : 1.5rem;
+    font-size : 1rem;
 }
 #todo-list button {
     border : 0;
