@@ -14,16 +14,47 @@ img {
 }
 #login-form {
     position: absolute;
-    top : 50%;
+    top : 52%;
     left: 50%;
     transform: translate( -50%, -50%);
+}
+#login-form input {
+    width : 40vh;
+    background-color:transparent;
+    border-top : none;
+    border-left : none;
+    border-right : none;
+    border-bottom : 0.3rem solid white;
+    border-radius: 10%;
+    text-align: center;
+    color : white;
+    opacity: 1;
+    font-family: 'Roboto Slab', serif;
+    font-size : 1.5rem;
+}
+#login-form input:focus {
+    outline: none;
+}
+#login-form input::placeholder{
+    color : white;
+    font-size : 1.5rem;
+    opacity: 0.7;
+}
+#login-form button {
+    border : none;
+    background-color:transparent;
+    transform: translate(-30%);
+}
+#login-form button img {
+    width : 3vh;
+    height : 3vh;
 }
 #greeting{
     position: absolute;
     top : 50%;
     left: 50%;
     transform: translate( -50%, -50%);
-    color : lightgray;
+    color : rgb(202, 200, 200);
     font-family: 'Roboto Slab', serif;
     font-size : 1.5rem;
     opacity: 0.7;
@@ -48,6 +79,7 @@ img {
     font-family: 'Roboto Slab', serif;
     font-size : 1.5rem;
     opacity: 0.8;
+    width : 200vh;
 }
 
 #weather {
@@ -58,17 +90,26 @@ img {
     transform: translate( -50%, -50%);
     font-family: 'Roboto Slab', serif;
     font-size : 2rem;
+}
+#weather span:not(:last-child) {
     opacity: 0.8;
+}
+#weather span img {
+    position : absolute;
+    top : 15%;
+    left: 106%;
+    transform: translate( -50%, -50%);
+    width : 8vh;
+    height : 8vh;
 }
 
 #todo-form input{
-    border : none;
     width : 20%;
     position: absolute;
     top : 5%;
     left: 75%;
     font-family: 'Jua', sans-serif;
-    font-size : 1.2rem;
+    font-size : 1.5rem;
     background-color:transparent;
     border-top : none;
     border-left : none;
@@ -76,6 +117,10 @@ img {
     border-bottom : 0.3rem solid rgb(224, 221, 221);
     text-align: center;
     color : rgb(223, 217, 217);
+
+}
+#todo-form input:focus {
+    outline: none;
 }
 #todo-form input::placeholder{
     color : rgb(223, 217, 217);

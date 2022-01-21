@@ -16,10 +16,17 @@ function onGeoOK(position) {
        const feels_temp = document.querySelector("#weather span"); */
        const info = document.querySelectorAll("#weather span");
        
-       info[1].innerText = data.weather[0].main;
        info[0].innerText = data.name;
+       info[1].innerText = data.weather[0].main;
        info[2].innerText = data.main.temp + "°";
-       //info[3].innerText = data.main.feels_like;
+
+       const iconcode = data.weather[0].icon;
+       const iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+       
+       const img = document.createElement("img");
+       img.setAttribute("src", iconurl);
+       info[3].appendChild(img);
+       
 
     });
 
